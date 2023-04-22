@@ -32,6 +32,7 @@ function App(props) {
   axios.get(URL+country).then(res => {
    const school = res.data[number].name
    const website = res.data[number].domains
+   console.log(res.data)
   displayName(school);
   displayWeb(website);
    }).catch(err=> console.log(err.message))
@@ -48,11 +49,14 @@ function App(props) {
         <input onChange={handleNumberChange} type="text" value={number} id="search-term" />
         <button type="submit">Search</button>
       </form>
-
-      <p>{universityname} </p>
-      <p>{universityweb}</p>
-
-
+<div class='list'>
+<div class="space" >
+    {universityname.map(name=> {return(  <p>{name}</p>)})} 
+</div>
+<div >
+    {universityweb.map(web=>{return( <p>{web}</p>)})}
+</div>
+</div>
 
 
 

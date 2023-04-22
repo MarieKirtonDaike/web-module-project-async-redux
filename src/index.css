@@ -13,3 +13,14 @@ p {
 	margin-top: 2rem;
 	margin-bottom: 2rem;
 }
+
+.list {
+	display: flex;
+	flex-direction: row;
+	margin-left: 18rem;
+	
+}
+
+.space{
+	margin-right: 5rem;
+}

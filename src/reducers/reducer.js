@@ -10,8 +10,8 @@ export const initialstate = {
     country: "",
     number: "",
     gettingdata: false,
-    universityname: "",
-    universityweb: ""
+    universityname : [],
+    universityweb : []
 }
 
 
@@ -26,9 +26,9 @@ export const reducer = (state = initialstate, action) => {
         case DATA_RECIEVED:
             return({...state, gettingdata: false})
         case DISPLAY_UNI_NAME:
-            return({...state, universityname: action.payload})
+            return({...state, universityname: [...state.universityname, action.payload]})
         case DISPLAY_UNI_WEB:
-            return({...state, universityweb: action.payload})
+            return({...state, universityweb: [...state.universityweb, action.payload]})
         default:
             return state
 
